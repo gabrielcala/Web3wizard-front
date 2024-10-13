@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  background: #f1ecec;
+}
+
+.papel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 550px;
+  width: 450px;
+  background-color: rgb(82, 169, 172);
+  
+}
+
+
+.output {
+  width: 100%;
+  max-width: 300px;
+  padding: 30px;
+  border: 1px solid #007BFF;
+  border-radius: 5px;
+  background-color: white;
+  min-height: 100px;
+  white-space: pre-wrap; /* Mantém quebras de linha */
+  overflow: auto; /* Adiciona rolagem se necessário */
+  border: none;
+
+}
+
+button {
+  height: 40px;
+  width: 60px;
+  background: rgb(157, 189, 190);
+  cursor: pointer;
+  border: none;
+
+  
+}
+
+
+
+
