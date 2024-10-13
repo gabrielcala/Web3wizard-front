@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css'; // Importando o CSS
-import { ConnectWallet } from "@thirdweb-dev/react";
+import { getMetamaskProvider } from './metamaskService';
 
 const Dojo = () => {
     const [texto, setTexto] = useState('');
@@ -23,7 +23,7 @@ const Dojo = () => {
             />
             <br /><br />
             <button onClick={mostrarTexto} type="button">Update</button>
-            <ConnectWallet />
+            <button onClick={() => getMetamaskProvider()} type="button">Conectar</button>
         </div>
 
     );
