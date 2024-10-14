@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -9,7 +10,6 @@ body {
   align-items: center;
   justify-content: space-around;
   height: 100vh;
-  background: #f1ecec;
 }
 
 .papel {
@@ -17,10 +17,12 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 550px;
-  width: 450px;
+  margin: 0 auto;
+  margin-top: 100px;
+  height: 60vh;
+  width: 40vw;
   background-color: rgb(82, 169, 172);
-  
+  border-radius: 5px;
 }
 
 
@@ -36,16 +38,6 @@ body {
   overflow: auto; /* Adiciona rolagem se necessário */
   border: none;
 
-}
-
-button {
-  height: 40px;
-  width: 60px;
-  background: rgb(157, 189, 190);
-  cursor: pointer;
-  border: none;
-
-  
 }
 
 
