@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { ethers, Signer } from 'ethers';
 import "./App.css"; // Importando o CSS
-import { getMetamaskProvider } from "./metamaskService";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Box, Button, Input, InputGroup, Stack } from "@chakra-ui/react";
 import ABI from './abi.json';
-import { providers } from "web3";
 
 const Dojo = () => {
   const [texto, setTexto] = useState("");
@@ -18,14 +16,14 @@ const Dojo = () => {
       
     
     try {
-      const provider = await getDefaultProvider();
+      const provider = new ethers.BrowserProvider(window.ethereum)
       const signer = provider.getSigner();
 
-      const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
+      const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, signer);
       const contractSigner = contract.connect(signer);
 
-      const tx = await contractSigner.sendMessage({String});
-      setOutput(JSON.stringify(tx));
+      const tx = await contractSigner.sendMessage(texto);
+      setOutput(JSsON.tringify(tx));
 
       console.log(signer);
 
@@ -35,6 +33,10 @@ const Dojo = () => {
       setMessage(err.message);
     }
   };
+
+  function show() {
+    
+  }
 
   return (
     <div className="papel">
