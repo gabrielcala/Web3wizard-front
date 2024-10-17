@@ -16,17 +16,14 @@ const Dojo = () => {
       
     
     try {
-      const provider = new ethers.BrowserProvider(window.ethereum)
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
 
       const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, signer);
       const contractSigner = contract.connect(signer);
 
       const tx = await contractSigner.sendMessage(texto);
-      setOutput(JSsON.tringify(tx));
-
-      console.log(signer);
-
+      setOutput(JSsON.stringify(tx));
 
     }
     catch (err) {
@@ -35,7 +32,8 @@ const Dojo = () => {
   };
 
   function show() {
-    
+    console.log(provider);
+
   }
 
   return (
