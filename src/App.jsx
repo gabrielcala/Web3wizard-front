@@ -12,10 +12,17 @@ const Dojo = () => {
 
   const CONTRACT_ADDRESS = "0x0e736a5c39B7Cdf798cdd2A3fa7d88Cf4f07804e"
 
+  function setTx(){
+    setOutput(texto);
+  }
   async function mostrarTexto() {
       
+
+    setTx();
     
     try {
+      
+      
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
 
